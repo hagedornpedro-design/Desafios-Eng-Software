@@ -13,7 +13,6 @@ float area1;
 float pib1;
 int pontos1;
 float densidade1;
-float populacao1_pib;
 float pib_capita1;
 
 
@@ -96,6 +95,23 @@ scanf("%d", &pontos2);
 densidade2 = (float) populacao2 / area2;
 pib_capita2 = (float) (pib2 * 1000000000) / populacao2;
 
+//Criação do super poder
+//declara variável super poder
+
+double super_poder_1;
+double super_poder_2;
+double inverso_densidade1;
+double inverso_densidade2;
+
+inverso_densidade1 = (1/densidade1);
+inverso_densidade2 = (1/densidade2);
+
+super_poder_1 = populacao1 + area1 + pib1 + pontos1 + pib_capita1 + inverso_densidade1;
+super_poder_2 = populacao2 + area2 + pib2 + pontos2 + pib_capita2 + inverso_densidade2;
+
+
+
+
 
 //exibe os dados cadastrados
 printf("Cartas cadastradas");
@@ -111,6 +127,8 @@ printf("PIB: %.2f bilhões de reais \n", pib1);
 printf("Pontos turísticos: %d\n", pontos1);
 printf("Densidade populacional: %.2f hab/km²\n", densidade1);
 printf("PIB per capita: %.2f reais\n", pib_capita1);
+printf("Super poder: %.10f\n", super_poder_1);
+
 
 //carta 2
 printf("Carta 2\n");
@@ -123,5 +141,35 @@ printf("PIB: %.2f bilhões de reais \n", pib2);
 printf("Pontos turísticos: %d\n", pontos2);
 printf("Densidade populacional: %.2f hab/km²\n", densidade2);
 printf("PIB per capita: %.2f reais\n", pib_capita2);
+printf("Super poder: %.10f\n", super_poder_2);
+
+//Comparação dos poderes das cartas
+
+int resultado_populacao;
+int resultado_area;
+int resultado_pib;
+int resultado_pontos;
+int resultado_densidade;
+int resultado_pib_capita;
+int resultado_superpoder;
+
+resultado_populacao = populacao1 > populacao2;
+resultado_area = area1 > area2;
+resultado_pib = pib1 > pib2;
+resultado_pontos = pontos1 > pontos2;
+resultado_densidade = inverso_densidade1 > inverso_densidade2;
+resultado_pib_capita = pib_capita1 > pib_capita2;
+resultado_superpoder = super_poder_1 > super_poder_2;
+
+// resultado comparação das cartas
+
+printf("Comparação das cartas\n");
+printf("Carta 1 venceu (%d)\n", resultado_populacao);
+printf("Carta 1 venceu (%d)\n", resultado_area);
+printf("Carta 1 venceu (%d)\n", resultado_pib);
+printf("Carta 1 venceu (%d)\n", resultado_pontos);
+printf("Carta 2 venceu (%d)\n", resultado_densidade);
+printf("Carta 1 venceu (%d)\n", resultado_pib_capita);
+printf("Carta 1 venceu (%d)\n", resultado_superpoder);
 
 }
