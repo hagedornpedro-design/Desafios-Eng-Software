@@ -18,8 +18,7 @@ typedef struct
     int tropas; //armazena a quantidade de tropas em numeros inteiros
     } territorio;
 
-
-
+    
 //criar funções modulares: cadastro, exibição, ataque, liberação
 void cadastro(territorio* mapa, int quantidade);
 void exibirmapa(territorio* mapa, int quantidade);
@@ -41,9 +40,6 @@ void cadastro(territorio* mapa, int quantidade)
             scanf(" %s", mapa[i].cor);
             printf("Digite a quantidade de tropas: ");
             scanf("%d", &mapa[i].tropas);
-
-            //printf("Digite a quantidade de tropas:");
-
         }
     }
     
